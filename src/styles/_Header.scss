@@ -1,0 +1,18 @@
+@import './colors';
+.navbar {
+  padding: 1rem 3rem;
+  .navbar-brand {
+    color: $main-blue-color;
+    margin-right: 30px;
+    font-size: 27px;
+    letter-spacing: 2px;
+    font-weight: bold;
+  }
+  .nav-item {
+    font-size: 18px;
+  }
+  .bmw-search {
+    width: 270px;
+    height: 40px;
+  }
+}

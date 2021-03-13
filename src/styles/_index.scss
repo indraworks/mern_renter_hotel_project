@@ -1,0 +1,88 @@
+@import './Header.scss'; /* _header gak perlu dipanggil itu kasih tau scss compier
+utk prosess pada saat importd diprosess sbgai css   */
+@import './_colors.scss' ;
+@import './_RentalHome.scss';
+html {
+  font-size: 10px;
+}
+
+a.title {
+  font-size: 2.5rem;
+}
+form.form-inline {
+  font-size: 18px;
+}
+
+//cara 2 pakai dan  hovernya dimasukan kalang dan ditambah &
+.navbar-dark .navbar-nav {
+  .navbar-link {
+    &:hover {
+      color: #61dafb;
+    }
+  }
+}
+
+.btn {
+  &.bmw-main {
+    height: 40px;
+    width: 60px;
+    border-color: $main-blue-color;
+    color: $main-blue-color;
+    &:hover,
+    &:fokus,
+    &:active {
+      background-color: $main-blue-color;
+      border-color: $main-blue-color;
+      color: white;
+      box-shadow: none;
+    }
+  }
+}
+
+/* catatan sass
+kita bisa tarik import file bootstrap dan bootstrap js dari file index.js
+hanya tambahkan ~bootstrap stlah import
+dan kit ajuga  bisa splite file css sesuai tema componentnya 
+misalkan utk header dipisah dari file utama dan file2 yglainnya juga 
+akan di treat dgn cara yg sama
+dan kemudian di import dari file scss tsb ke program utama
+
+penamaan _namafile diaruh disubdirectory adalah agar kita kasih tahu
+kmudian subdir/_index.scss <---gabungan nama disini 
+               _nana_lain.scss
+
+sumber atau root directory
+             index.scss ----> 
+                           @import 'bootstrap/dist/css/bpptstrap.min.css'
+             isinya adalah @import '/subdir'  
+
+////end catatan ///
+*/
+// .navbar-dark .navbar-nav .nav-link:hover {
+//   color: #61dafb;
+// }
+/*yg langsung warna 2, yg link dihovermaka bisa dimasukan  dlm kalang */
+
+// old css
+// cara 1
+//.navbar-dark .navbar-nav {
+//   .navbar-link:hover {
+//      color: #61dafb;
+//   }
+// }
+// //berlakul juga utk btn bmw-main
+// .btn.bmw-main {
+//   height: 40px;
+//   width: 60px;
+//   border-color: #61dafb;
+//   color: #61dafb;
+// }
+
+// .btm.bmw-main:hover,
+// .btn.bmw-main:focus,
+// .btn.bmw-main:active {
+//   background-color: #61dafb;
+//   border-color: #61dafb;
+//   color: white;
+//   box-shadow: none;
+//}
