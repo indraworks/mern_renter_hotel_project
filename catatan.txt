@@ -1,0 +1,9 @@
+### rental home
+1. create rentalhome class component 'src/pages' folder
+2.provide styling and JSX from resourcees
+3.For styling create separate files in styles folder
+4. Render [RentalHome ] component in [App.js] under[Header]
+
+
+#pada bab routing kit akan buat dulu gimana 
+tanpa library buat native routing 

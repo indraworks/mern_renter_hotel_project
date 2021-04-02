@@ -1,9 +1,26 @@
 @import './Header.scss'; /* _header gak perlu dipanggil itu kasih tau scss compier
 utk prosess pada saat importd diprosess sbgai css   */
-@import './_colors.scss' ;
+@import './_colors.scss';
 @import './_RentalHome.scss';
 html {
   font-size: 10px;
+}
+
+/*
+utk classdari  style type-${rental category }
+kita taruh disini karna ini _index.css mrupakan 
+muara dari smua child.scss yg diimport disni
+*/
+.type- {
+  &apartment {
+    color: rgb(6, 158, 39);
+  }
+  &condo {
+    color: rgb(214, 18, 133);
+  }
+  &house {
+    color: rgb(106, 17, 207);
+  }
 }
 
 a.title {

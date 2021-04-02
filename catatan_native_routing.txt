@@ -1,0 +1,38 @@
+buat 2 buah component ,login dan register ( child) import dan render di app.js
+cara mgnujinya adalah dgn di console asukan pada browesr
+http://localhost:3000/login 
+pada console : ketik window.location.pathname
+hasil = "login"
+
+kita implement di app.js cara native routine tanpa library
+
+ini cara pertama (ke-1) di apps kit abuat sperti ini :
+
+
+
+
+
+cara kedua buat file router sendiri namanya Bmw-Router.js
+kit aimport ke App.js kita wrapping 
+<Header/> 
+<RentalHome/> 
+sebgai anak reactElement atau children component
+<ROuter>
+<Header/> 
+<RentalHome/> 
+</Router>
+
+jika dirawping maka router.js yg mrupakan parentnya maka akan ada 
+props pada Router ini property dari anak suya dia bisa olah/autak2 atik
+sbb
+ export const Router=(props)=> {
+     return (
+       <div>
+         {props.children} 
+       </div>
+     )
+  }
+
+
+
+

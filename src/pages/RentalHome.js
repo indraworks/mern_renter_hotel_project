@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-
+import RentalCard from '../components/rental/RentalCard'
 export class RentalHome extends Component {
   constructor() {
     super();
@@ -41,6 +41,22 @@ export class RentalHome extends Component {
       ],
     };
   }
+  //buat functional render rental
+
+  renderRentals(rentals) {
+    //hrus return supaya bisa dirender/ditampilkan pada render() {}
+    //debugger
+    const newRentals = rentals.map((rental) => {
+      //rental jadi props di RentalCard component
+      return (
+        <div key={rental._id} className='col-md-3'>
+           <RentalCard rental={rental}/>
+        </div>
+      );
+    });
+    return newRentals;
+  }
+
   //ditampilkan di data di render
   render() {
     const { rentals } = this.state;
@@ -49,32 +65,7 @@ export class RentalHome extends Component {
         <div className='card-list'>
           <div className='container'>
             <h1 className='page-title'>Your Home All Arround The World</h1>
-            <div className='row '>
-              {rentals.map((rental) => {
-                return (
-                  <div key={rental._id} className='col-md-3'>
-                    <div className='card bmw-card'>
-                      <img
-                        className='card-img-top'
-                        src={rental.image}
-                        alt={rental.title}
-                      />
-                      <div className='card-body'>
-                        <h6 className='card-subtitle mb-0 text-muted'>
-                          {rental.shared ? 'Shared' : 'Whole'} {rental.category}{' '}
-                          &#183;
-                          {rental.city}
-                        </h6>
-                        <h5 className='card-title big-font'>{rental.title}</h5>
-                        <p className='card-text'>
-                          ${rental.dailyPrice} per-Night &#183;Free Cancelation
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+            <div className='row '>{this.renderRentals(rentals)}</div>
           </div>
         </div>
       </Fragment>
@@ -86,7 +77,7 @@ export default RentalHome;
 
 /*
 catatan kalkau bikin map dikalang banyak element maka 
-cari yg paling top yg utk ditaruh utk id keynya 
+cari yg paling top element  yg utk ditaruh utk id keynya 
 jadi intinya dari tag yg paling top atau atas
 contoh diatas 
 rentals,map((rental)=> {
@@ -108,5 +99,12 @@ utk yg share bsa di irtenary kalau true brarti share kalau tidak whole
 rental.map nanti akan kita pisahkan dan akan kita buat komponen sndiri
 kita passing dari sini lewat props
 nanti ini kita pisahkan  dan 
+
+*/
+
+/*
+buat functional render diuar render(rental ) {}  <--dengan passing parameter rental
+kmduian taruh rental map disana st
+
 
 */
