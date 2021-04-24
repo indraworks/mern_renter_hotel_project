@@ -43,13 +43,13 @@ form.form-inline {
   &.bmw-main {
     height: 40px;
     width: 60px;
-    border-color: $main-blue-color;
-    color: $main-blue-color;
+    border-color: $main-app-color;
+    color: $main-app-color;
     &:hover,
     &:fokus,
     &:active {
-      background-color: $main-blue-color;
-      border-color: $main-blue-color;
+      background-color: $main-app-color;
+      border-color: $main-app-color;
       color: white;
       box-shadow: none;
     }
